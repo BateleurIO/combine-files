@@ -1,0 +1,25 @@
+{
+  "name": "combine-files",
+  "version": "1.0.0",
+  "description": "Combine several files into one, traversing folders as needed and adding optional headers and footers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test-combine-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BateleurIO/combine-files.git"
+  },
+  "keywords": [
+    "combine",
+    "files",
+    "markdown",
+    "sql"
+  ],
+  "author": "Cobus Kruger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BateleurIO/combine-files/issues"
+  },
+  "homepage": "https://github.com/BateleurIO/combine-files#readme"
+}
