@@ -1,0 +1,7 @@
+{
+    "fileGroups": [{
+        "groupName": "Group2",
+        "fileGlobs": ["**/bob2*.md"],
+        "tocEntry": "  TOC Entry goes here" 
+     }]
+}
