@@ -10,7 +10,7 @@ export class ConfigLoader {
     this._config = { ...defaults };
   }
   public addConfigFile(configFilePath: string): boolean {
-    if (fs.existsSync(configFilePath)) {
+    if (!fs.existsSync(configFilePath)) {
       return false;
     }
     const loadedConfigBuffer = fs.readFileSync(configFilePath);
@@ -39,7 +39,7 @@ export class ConfigLoader {
       return;
     }
     // }
-    // this._config.fileGroups.push(newFileGroup);
+    this._config.fileGroups.push(newFileGroup);
   }
   public get config() {
     return this._config;
