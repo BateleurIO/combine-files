@@ -9,11 +9,15 @@ export class ConfigLoader {
   constructor(private defaults: IConfig) {
     this._config = { ...defaults };
   }
-  public addConfigFile(configFilePath: string) {
+  public addConfigFile(configFilePath: string): boolean {
+    if (fs.existsSync(configFilePath)) {
+      return false;
+    }
     const loadedConfigBuffer = fs.readFileSync(configFilePath);
     const loadedConfigString = loadedConfigBuffer.toString();
     const loadedConfig = JSON.parse(loadedConfigString) as IConfig;
     this.addConfig(loadedConfig);
+    return true;
   }
   public addConfig(newConfig: IConfig) {
     if (!this._config || !this._config['fileGroups']) {
@@ -26,7 +30,7 @@ export class ConfigLoader {
     }
   }
   public addConfigFileGroup(newFileGroup: IConfigFileGroup) {
-    if (newFileGroup.groupName) {
+    // if (newFileGroup.groupName) {
       const index = this._config.fileGroups.findIndex((fileGroup: IConfigFileGroup) => {
         return fileGroup.groupName === newFileGroup.groupName;
       });
@@ -34,8 +38,8 @@ export class ConfigLoader {
         this.config.fileGroups[index] = ConfigLoader.mergeObjects(this.config.fileGroups[index], newFileGroup);
         return;
       }
-    }
-    this._config.fileGroups.push(newFileGroup);
+    // }
+    // this._config.fileGroups.push(newFileGroup);
   }
   public get config() {
     return this._config;
