@@ -1,3 +1,3 @@
-export interface FilteredFileLists {
-    [key: string]: string[];
+export interface IFilteredFileLists {
+  [key: string]: string[];
 }

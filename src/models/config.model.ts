@@ -1,5 +1,5 @@
-import { ConfigFileGroup } from './config-file-group.model';
-export interface Config {
-    fileGroups: ConfigFileGroup[];
+import { IConfigFileGroup } from './config-file-group.model';
+export interface IConfig {
+  fileGroups: IConfigFileGroup[];
 }
-export { ConfigFileGroup }
+export { IConfigFileGroup };

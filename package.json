@@ -1,25 +1,29 @@
 {
-  "name": "combine-files",
+  "name": "@bateleur/combine-files",
   "version": "1.0.0",
+  "author": "Cobus Kruger (https://www.cobuskruger.com)",
   "description": "Combine several files into one, traversing folders as needed and adding optional headers and footers.",
+  "keywords": ["combine", "join", "concatenate", "concat", "add", "files", "scripts", "sql", "markdown"],
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc --watch"
+    "build": "tsc --watch",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "publish-patch": "npm version patch && npm publish",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
+  "files": ["dist/**/*"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BateleurIO/combine-files.git"
   },
-  "keywords": [
-    "combine",
-    "files",
-    "markdown",
-    "sql"
-  ],
-  "author": "Cobus Kruger",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/BateleurIO/combine-files/issues"
   },
@@ -28,7 +32,10 @@
     "@types/glob": "^7.1.1",
     "@types/jest": "^24.0.11",
     "jest": "^24.3.1",
+    "prettier": "^1.16.4",
     "ts-jest": "^24.0.0",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3.3333"
   },
   "dependencies": {
