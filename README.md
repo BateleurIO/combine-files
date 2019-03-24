@@ -308,7 +308,7 @@ All the properties are optional.
 ## See Also
 
 - [Combine Scripts for Azure Data Studio](https://github.com/BateleurIO/azuredatastudio-combine-scripts) is an extension for Microsoft Azure Data Studio that uses this to concatenate SQL script files. Supports configuration files and the ability to run several configurations in one action.
-- [Combine Files for Visual Studio Code](https://github.com/BateleurIO/vscode-combine-files) is an extension for Microsoft Visual Studio code that uses this to concatenate files of many kinds. Supports configuration files and the ability to run several configurations in one action.
+- [Combine Files for Visual Studio Code](https://github.com/BateleurIO/vscode-combine-files) is an extension for Microsoft Visual Studio Code that uses this to concatenate files of many kinds. Supports configuration files and the ability to run several configurations in one action.
 
 ## License
 
