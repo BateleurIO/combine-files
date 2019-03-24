@@ -1,6 +1,6 @@
 {
   "name": "@bateleur/combine-files",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Cobus Kruger (https://www.cobuskruger.com)",
   "description": "Combine several files into one, traversing folders as needed and adding optional headers and footers.",
   "keywords": ["combine", "join", "concatenate", "concat", "add", "files", "scripts", "sql", "markdown"],
