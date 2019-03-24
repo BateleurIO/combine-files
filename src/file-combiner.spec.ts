@@ -3,7 +3,7 @@ import { FileCombiner } from './file-combiner';
 
 test('Can concatenate files', () => {
   const fileList: string[] = [path.resolve('./test/file1.txt'), path.resolve('./test/file2.txt')];
-  const concatenator = new FileCombiner(
+  const combiner = new FileCombiner(
     {
       entryFooter: ['Entry Footer'],
       entryHeader: ['Entry Header'],
@@ -17,7 +17,7 @@ test('Can concatenate files', () => {
     },
     fileList,
   );
-  const text = concatenator.getText();
+  const text = combiner.getText();
   const expectedText = `File Header
 TOC Header
 \t6\t\tC:\\Dev\\Github\\combine-files\\test\\file1.txt
