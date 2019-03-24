@@ -31,13 +31,13 @@ export class ConfigLoader {
   }
   public addConfigFileGroup(newFileGroup: IConfigFileGroup) {
     // if (newFileGroup.groupName) {
-      const index = this._config.fileGroups.findIndex((fileGroup: IConfigFileGroup) => {
-        return fileGroup.groupName === newFileGroup.groupName;
-      });
-      if (index !== -1) {
-        this.config.fileGroups[index] = ConfigLoader.mergeObjects(this.config.fileGroups[index], newFileGroup);
-        return;
-      }
+    const index = this._config.fileGroups.findIndex((fileGroup: IConfigFileGroup) => {
+      return fileGroup.groupName === newFileGroup.groupName;
+    });
+    if (index !== -1) {
+      this.config.fileGroups[index] = ConfigLoader.mergeObjects(this.config.fileGroups[index], newFileGroup);
+      return;
+    }
     // }
     // this._config.fileGroups.push(newFileGroup);
   }
