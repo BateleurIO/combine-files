@@ -1,5 +1,5 @@
 {
-  "name": "@bateleur/combine-files",
+  "name": "@cobuskruger/combine-files",
   "version": "1.0.1",
   "author": "Cobus Kruger (https://www.cobuskruger.com)",
   "description": "Combine several files into one, traversing folders as needed and adding optional headers and footers.",
@@ -9,7 +9,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc --watch",
+    "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "publish-patch": "npm version patch && npm publish",
