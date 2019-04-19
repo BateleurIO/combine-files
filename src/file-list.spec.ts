@@ -42,5 +42,5 @@ test('Add files from multiple sources', () => {
   const fileLists = new FileList(['test', 'src', 'tsconfig.json'], basePath, {
     fileGlobs: ['**/*.spec.*s'],
   }).list;
-  expect(fileLists.length).toBe(5);
+  expect(fileLists.length).toBe(4);
 });

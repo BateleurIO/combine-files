@@ -13,22 +13,30 @@ export class FileList {
     this._list = [...new Set(this.list)];
   }
   public addFilesToList(pathName: string) {
-    if (fs.lstatSync(pathName).isDirectory()) {
-      for (const pattern of this.fileGroup.fileGlobs || ['*.*']) {
-        let finalPattern = pattern;
-        if (!pattern.startsWith('**') && !path.isAbsolute(pattern)) {
-          const rootPattern = path.resolve(this.rootPath, pattern);
-          finalPattern = path.relative(pathName, rootPattern);
-          const backNavIndex = finalPattern.search(/(\.\.\/)+|(\.\.\\)+/);
-          if (backNavIndex !== -1) {
-            continue;
-          }
+    for (const pattern of this.fileGroup.fileGlobs || ['*.*']) {
+      let finalPattern = pattern;
+      if (!pattern.startsWith('**') && !path.isAbsolute(pattern)) {
+        const rootPattern = path.resolve(this.rootPath, pattern);
+        finalPattern = path.relative(pathName, rootPattern);
+        const backNavIndex = finalPattern.search(/(\.\.\/)+|(\.\.\\)+/);
+        if (backNavIndex !== -1) {
+          continue;
         }
-        const glob = new GlobSync(finalPattern, { cwd: pathName, absolute: true });
-        this.list.push(...glob.found.map(item => path.normalize(item.toUpperCase())));
       }
-    } else if (fs.lstatSync(pathName).isFile()) {
-      this.list.push(path.normalize(path.resolve(this.rootPath, pathName).toUpperCase()));
+
+      let cwd = pathName;
+      let absFileName: string;
+      if (fs.lstatSync(pathName).isFile()) {
+        absFileName = path.normalize(path.resolve(this.rootPath, pathName).toUpperCase());
+        cwd = path.dirname(absFileName);
+      }
+
+      const glob = new GlobSync(finalPattern, { cwd, absolute: true });
+      this.list.push(
+        ...glob.found
+          .map(item => path.normalize(item.toUpperCase()))
+          .filter(item => !absFileName || item === absFileName),
+      );
     }
   }
 }
