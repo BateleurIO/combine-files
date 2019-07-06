@@ -10,7 +10,7 @@ export class TagReplacer {
     return newLine;
   }
   public static replaceTimeStamp(line: string[]): string[] {
-    const parsed = line.map(value => value.replace(/\$\{now\}/, (new Date()).toString()));
+    const parsed = line.map(value => value.replace(/\$\{now\}/, new Date().toString()));
     return parsed;
   }
 }
