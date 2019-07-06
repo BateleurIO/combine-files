@@ -49,7 +49,7 @@ export class FileCombiner {
     }
   }
   private addHeader(): any {
-    this.items.push(...this.fileGroup.fileHeader);
+    this.items.push(...TagReplacer.replaceTimeStamp(this.fileGroup.fileHeader));
   }
   private addFooter(): any {
     this.items.push(...this.fileGroup.fileFooter);

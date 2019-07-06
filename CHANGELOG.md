@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
+## [1.0.6] - 2019-07-06
+
+* Allow adding the time stamp to the file output.
+* Updated dependencies to fix five vulnerabilities.
+
 ## [1.0.5] - 2019-04-19
 
 Fixed a problem where files were included without being matched to the globs.

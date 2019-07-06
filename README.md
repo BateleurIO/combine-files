@@ -69,7 +69,8 @@ const result = combineFiles([], {
     fileHeader: [
         "/* This text is placed at the very top of the output file, before the",
         "   table of contents and input file content. You can add multiple lines",
-        "   and they will be separated by EOL markers.",
+        "   and they will be separated by EOL markers. You can also optionally ",
+        "   use ${now} to insert the current date and time.",
         "*/"
     ],
     includeToc: true,

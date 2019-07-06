@@ -9,4 +9,8 @@ export class TagReplacer {
     const newLine = line.replace(/\$\{entryPath\}/, path).replace(/\$\{lineNo\}/, lineNo.toString());
     return newLine;
   }
+  public static replaceTimeStamp(line: string[]): string[] {
+    const parsed = line.map(value => value.replace(/\$\{now\}/, (new Date()).toString()));
+    return parsed;
+  }
 }
