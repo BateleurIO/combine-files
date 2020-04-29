@@ -33,9 +33,7 @@ export class FileList {
 
       const glob = new GlobSync(finalPattern, { cwd, absolute: true });
       this.list.push(
-        ...glob.found
-          .map(item => path.normalize(item))
-          .filter(item => !absFileName || item === absFileName),
+        ...glob.found.map(item => path.normalize(item)).filter(item => !absFileName || item === absFileName),
       );
     }
   }
