@@ -6,7 +6,7 @@ export class TagReplacer {
     });
   }
   public static replaceTags(line: string, path: string, lineNo: number): string {
-    const newLine = line.replace(/\$\{entryPath\}/, path).replace(/\$\{lineNo\}/, lineNo.toString());
+    const newLine = line.replace(/\$\{entryPath\}/, path.toUpperCase()).replace(/\$\{lineNo\}/, lineNo.toString());
     return newLine;
   }
   public static replaceTimeStamp(line: string[]): string[] {

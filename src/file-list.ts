@@ -27,14 +27,14 @@ export class FileList {
       let cwd = pathName;
       let absFileName: string;
       if (fs.lstatSync(pathName).isFile()) {
-        absFileName = path.normalize(path.resolve(this.rootPath, pathName).toUpperCase());
+        absFileName = path.normalize(path.resolve(this.rootPath, pathName));
         cwd = path.dirname(absFileName);
       }
 
       const glob = new GlobSync(finalPattern, { cwd, absolute: true });
       this.list.push(
         ...glob.found
-          .map(item => path.normalize(item.toUpperCase()))
+          .map(item => path.normalize(item))
           .filter(item => !absFileName || item === absFileName),
       );
     }

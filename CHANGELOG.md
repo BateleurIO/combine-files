@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
+## [1.0.8] - 2020-04-29
+
+* Don't uppercase filenames during search.
+
 ## [1.0.7] - 2020-04-29
 
 * Added a simple CLI wrapper.
