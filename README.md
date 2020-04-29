@@ -19,11 +19,17 @@ $ npm install combine-files
 
 ## Usage
 
+### Command Line
+
+```
+combine-files --glob=**/*.sql --input=./ --output=./output.sql
+```
+
 ### Simple One-Liner
 
 **From JavaScript**
 ```js
-var combineFiles = require('@cobuskruger/combine-files');
+var c = require('@cobuskruger/combine-files');
 const result = c.combineFiles(['./test/test1.txt', './test/test2.txt'], config);
 ```
 

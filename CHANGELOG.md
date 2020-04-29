@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
+## [1.0.7] - 2020-04-29
+
+* Added a simple CLI wrapper.
+* Updated dependencies to fix vulnerabilities.
+
 ## [1.0.6] - 2019-07-06
 
 * Allow adding the time stamp to the file output.
