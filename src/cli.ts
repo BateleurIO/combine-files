@@ -4,7 +4,6 @@ import { CommandLineProcessor } from './cli-processor';
 import { FileList } from './file-list';
 import { combineFiles } from './index';
 
-
 function run(params: any) {
   for (const group of params.fileGroups) {
     const fileList = new FileList(['.'], './', group);

@@ -5,7 +5,7 @@ import { FileList } from './file-list';
 import { combineFiles } from './index';
 
 test('Placeholder', () => {
-    // These tests are not presently valid.
+  // These tests are not presently valid.
 });
 
 // function run(params: any) {
