@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
+## [1.0.10] - 2020-05-11
+
+* Expanded documentation for command-line usage.
+* Improved robustness of command-line usage.
+* Added defaults for SQL, Markdown and text files.
+
 ## [1.0.8] - 2020-04-29
 
 * Don't uppercase filenames during search.
