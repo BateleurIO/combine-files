@@ -64,15 +64,25 @@ export class CommandLineProcessor {
         return value;
     }
     private showHelp() {
+        // tslint:disable-next-line: no-console
         console.log('Examples:');
+        // tslint:disable-next-line: no-console
         console.log('combine-files --mask=*.txt');
+        // tslint:disable-next-line: no-console
         console.log('-\tRecursively combines all *.txt files in the current folder and stores the result in output.txt');
+        // tslint:disable-next-line: no-console
         console.log('combine-files --mask=*.sql --input=./scripts --output=./combined-script.sql');
+        // tslint:disable-next-line: no-console
         console.log('-\tRecursively combines all *.sql files in the ./scripts folder and stores the result in ./combined-script.sql');
+        // tslint:disable-next-line: no-console
         console.log('combine-files --config=./sample-config.json');
+        // tslint:disable-next-line: no-console
         console.log('-\tRecursively combines files according to the configuration found in ./sample-config.json');
+        // tslint:disable-next-line: no-console
         console.log('combine-files');
+        // tslint:disable-next-line: no-console
         console.log('-\tRecursively combines files according to the configuration found in ./combinefiles.json');
+        // tslint:disable-next-line: no-console
         console.log(' \tDocumentation for the config file may be found here: https://github.com/BateleurIO/combine-files#config-file-format');
     }
 }
