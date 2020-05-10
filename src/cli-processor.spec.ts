@@ -5,12 +5,12 @@ test('Can read parameters', () => {
     const params = processor.readParams([
         'c:/program-file.exe', '--output=./output.sql', '--input=./input', '--mask=*.sql', '--help'
     ]);
-    expect(Object.keys(params).length).toBe(3);
+    expect(Object.keys(params).length).toBe(4);
     expect(params['--config']).toBeUndefined();
     expect(params['--output']).toBe('./output.sql');
     expect(params['--input']).toBe('./input');
     expect(params['--mask']).toBe('*.sql');
-    expect(params['--help']).toBe('*.sql');
+    expect(params['--help']).toBe(true);
 });
 test('Can process command line without config file', () => {
     const processor = new CommandLineProcessor();
