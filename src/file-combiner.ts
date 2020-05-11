@@ -24,7 +24,7 @@ export class FileCombiner {
     }
     for (const uri of fileList) {
       this.addFile(uri);
-    };
+    }
     if (this.fileGroup.includeToc) {
       this.updateToc();
     }
