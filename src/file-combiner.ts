@@ -22,9 +22,9 @@ export class FileCombiner {
     if (this.fileGroup.includeToc) {
       this.addToc(fileList);
     }
-    fileList.forEach(uri => {
+    for (const uri of fileList) {
       this.addFile(uri);
-    });
+    };
     if (this.fileGroup.includeToc) {
       this.updateToc();
     }

@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
+## [1.0.11] - 2020-05-11
+
+* Switched build to es2015, which simplifies the generated code and makes it more robust when it comes to Node JS call stack handling.
+
 ## [1.0.10] - 2020-05-11
 
 * Expanded documentation for command-line usage.
