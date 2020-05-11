@@ -59,13 +59,10 @@ export class FileCombiner {
     const data = this.removeBom(fs.readFileSync(uri, 'UTF-8'))
       .toString()
       .replace(/\r/, '')
-      .replace(/\u00ef\u00bb\u00bf/, '')
-      .split('\n');
-    // if (currentLength !==  this.items.length) {
+      .replace(/\u00ef\u00bb\u00bf/, '');
     this.lineNumbers[uri] = currentLength + 1;
-    // }
     this.items.push(...TagReplacer.replaceTagsArr(this.fileGroup.entryHeader, uri, this.lineNumbers[uri]));
-    this.items.push(...data);
+    this.items.push(data)
     this.items.push(...TagReplacer.replaceTagsArr(this.fileGroup.entryFooter, uri, this.lineNumbers[uri]));
   }
   private removeBom(x: any) {
