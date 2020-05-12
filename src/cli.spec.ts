@@ -10,8 +10,7 @@ test('Placeholder', () => {
 
 // function run(params: any) {
 //   for (const group of params.fileGroups) {
-//     const fileList = new FileList(['test'], './', group);
-//     combineFiles(fileList.list, group, params.input);
+//     combineFiles([params.input], group, params.input);
 //   }
 // }
 
@@ -26,12 +25,8 @@ test('Placeholder', () => {
 //     run(config);
 // });
 // test('Can join files without params', () => {
-//   const x = 17;
-//   if ((x / 2) > 2) {
 //     const processor = new CommandLineProcessor();
 //     const config = processor.getConfig(processor.readParams(['']));
 //     run(config);
 //     expect(1).toBe(2);
-
-//   }
 // });

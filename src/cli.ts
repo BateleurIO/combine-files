@@ -6,8 +6,7 @@ import { combineFiles } from './index';
 
 function run(params: any) {
   for (const group of params.fileGroups) {
-    const fileList = new FileList(['.'], './', group);
-    combineFiles(fileList.list, group, params.input);
+    combineFiles([params.input], group, params.input);
   }
 }
 const processor = new CommandLineProcessor();

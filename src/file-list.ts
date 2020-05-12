@@ -26,6 +26,9 @@ export class FileList {
 
       let cwd = pathName;
       let absFileName: string;
+      if (!fs.existsSync(pathName)) {
+        throw new Error(`Path not found: ${pathName}`);
+      }
       if (fs.lstatSync(pathName).isFile()) {
         absFileName = path.normalize(path.resolve(this.rootPath, pathName));
         cwd = path.dirname(absFileName);
