@@ -60,8 +60,24 @@ export class FileCombiner {
     const fileText = this.bufferToString(data);
     this.lineNumbers[uri] = currentLength + 1;
     this.items.push(...TagReplacer.replaceTagsArr(this.fileGroup.entryHeader, uri, this.lineNumbers[uri]));
-    this.items.push(...fileText.split(/\r\n/));
+    const lines = fileText.split(/\r\n/);
+
+    const buckets = this.intoBuckets(lines, 100_000);
+    for (const bucket of buckets) {
+      this.items.push(...bucket);
+    }
+
     this.items.push(...TagReplacer.replaceTagsArr(this.fileGroup.entryFooter, uri, this.lineNumbers[uri]));
+  }
+  private intoBuckets(arr: string[], maxBucketSize: number): string[][] {
+    const result: string[][] = [];
+    let startIndex = 0;
+    while (startIndex < arr.length) {
+      const bucket = arr.slice(startIndex, startIndex + maxBucketSize);
+      result.push(bucket);
+      startIndex += maxBucketSize;
+    }
+    return result;
   }
   private removeBom(x: any) {
     // Catches EFBBBF (UTF-8 BOM) because the buffer-to-string

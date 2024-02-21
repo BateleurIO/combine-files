@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
+## [1.0.15] - 2024-02-21
+
+* Fixed a crash on large files.
+
 ## [1.0.14] - 2020-06-11
 
 * Support files in different encodings.
