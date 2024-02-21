@@ -20,8 +20,8 @@ test('Can concatenate files', () => {
   const text = combiner.getText();
   const expectedText = `File Header
 TOC Header
-\t6\t\tC:\\Dev\\Github\\combine-files\\test\\file1.txt
-\t9\t\tC:\\Dev\\Github\\combine-files\\test\\file2.txt
+\t6\t\tC:\\dev\\github\\combine-files\\test\\file1.txt
+\t9\t\tC:\\dev\\github\\combine-files\\test\\file2.txt
 TOC Footer
 Entry Header
 File 1
