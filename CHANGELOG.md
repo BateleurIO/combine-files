@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
-## [1.0.15] - 2024-02-21
+## [1.0.17] - 2024-02-21
 
 * Fixed a crash on large files.
 
