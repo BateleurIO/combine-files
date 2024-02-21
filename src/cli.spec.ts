@@ -21,7 +21,7 @@ test('Placeholder', () => {
 // });
 // test('Can join files from params', () => {
 //     const processor = new CommandLineProcessor();
-//     const config = processor.getConfig(processor.readParams(['', '--mask=*.sql']));
+//     const config = processor.getConfig(processor.readParams(['--input=./test', '--mask=*.sql', '--output=./output-from-jest-2.sql']));
 //     run(config);
 // });
 // test('Can join files without params', () => {

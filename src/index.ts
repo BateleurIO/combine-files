@@ -11,7 +11,7 @@ export function combineFiles(fileList: string[], fileGroup: IConfigFileGroup, ro
   const combiner = new FileCombiner(fileGroup, resolvedFiles.list);
   const fileText = combiner.getText();
   if (fileGroup.outputFileName) {
-    fs.writeFileSync(fileGroup.outputFileName, fileText);
+    fs.writeFileSync(fileGroup.outputFileName, fileText, { encoding: 'utf8' });
   }
   return fileText;
 }

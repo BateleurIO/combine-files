@@ -56,13 +56,11 @@ export class FileCombiner {
   }
   private addFile(uri: string): any {
     const currentLength = this.items.length;
-    const data = this.removeBom(fs.readFileSync(uri, 'UTF-8'))
-      .toString()
-      .replace(/\r/, '')
-      .replace(/\u00ef\u00bb\u00bf/, '');
+    const data = fs.readFileSync(uri);
+    const fileText = this.bufferToString(data);
     this.lineNumbers[uri] = currentLength + 1;
     this.items.push(...TagReplacer.replaceTagsArr(this.fileGroup.entryHeader, uri, this.lineNumbers[uri]));
-    this.items.push(data);
+    this.items.push(...fileText.split(/\r\n/));
     this.items.push(...TagReplacer.replaceTagsArr(this.fileGroup.entryFooter, uri, this.lineNumbers[uri]));
   }
   private removeBom(x: any) {
@@ -76,5 +74,15 @@ export class FileCombiner {
       return x.slice(3);
     }
     return x;
+  }
+  private bufferToString(data): string {
+    let encoding = 'ascii';
+    if (data[0] === 0xEF && data[1] === 0xBB && data[2] === 0xBF) {
+      encoding = 'utf8';
+    } else if (data[0] === 0xFF && data[1] === 0xFE) {
+      encoding = 'utf16le';
+    }
+    const result = this.removeBom(data.toString(encoding));
+    return result;
   }
 }

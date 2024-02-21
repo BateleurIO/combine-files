@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
+## [1.0.14] - 2020-06-11
+
+* Support files in different encodings.
+* Fixed a bug causing incorrect line numbers.
+
+## [1.0.13] - 2020-06-11
+
+* Gracefully fail when a file cannot be found.
+
 ## [1.0.12] - 2020-05-12
 
 * Incorrect file list processed in command-line version.
