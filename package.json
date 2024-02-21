@@ -1,6 +1,6 @@
 {
   "name": "@cobuskruger/combine-files",
-  "version": "1.0.16",
+  "version": "1.0.14",
   "author": "Cobus Kruger (https://www.cobuskruger.com)",
   "description": "Combine several files into one, traversing folders as needed and adding optional headers and footers.",
   "keywords": [
