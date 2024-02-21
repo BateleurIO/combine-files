@@ -93,9 +93,9 @@ export class FileCombiner {
   }
   private bufferToString(data): string {
     let encoding = 'ascii';
-    if (data[0] === 0xEF && data[1] === 0xBB && data[2] === 0xBF) {
+    if (data[0] === 0xef && data[1] === 0xbb && data[2] === 0xbf) {
       encoding = 'utf8';
-    } else if (data[0] === 0xFF && data[1] === 0xFE) {
+    } else if (data[0] === 0xff && data[1] === 0xfe) {
       encoding = 'utf16le';
     }
     const result = this.removeBom(data.toString(encoding));
