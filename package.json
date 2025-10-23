@@ -43,19 +43,19 @@
   },
   "homepage": "https://github.com/BateleurIO/combine-files#readme",
   "devDependencies": {
-    "@types/glob": "^7.1.1",
-    "@types/jest": "^24.0.11",
-    "jest": "^24.3.1",
-    "prettier": "^1.16.4",
-    "ts-jest": "^24.0.0",
-    "tslint": "^5.14.0",
+    "@types/glob": "^7.2.0",
+    "@types/jest": "^24.9.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.3.0",
+    "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.9.10"
   },
   "dependencies": {
     "chardet": "^2.1.0",
-    "glob": "^7.1.3",
+    "glob": "^7.2.3",
     "iconv-lite": "^0.7.0",
-    "tmp": "0.0.33"
+    "tmp": "0.2.5"
   }
 }
