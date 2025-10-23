@@ -56,7 +56,7 @@ export class FileCombiner {
   }
   private addFile(uri: string): any {
     const currentLength = this.items.length;
-    const data = fs.readFileSync(uri);
+    const data = fs.readFileSync(uri, { encoding: 'utf8' });
     const fileText = this.bufferToString(data);
     this.lineNumbers[uri] = currentLength + 1;
     this.items.push(...TagReplacer.replaceTagsArr(this.fileGroup.entryHeader, uri, this.lineNumbers[uri]));
