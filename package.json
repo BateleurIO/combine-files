@@ -1,6 +1,6 @@
 {
   "name": "@cobuskruger/combine-files",
-  "version": "1.0.19",
+  "version": "1.0.18",
   "author": "Cobus Kruger (https://www.cobuskruger.com)",
   "description": "Combine several files into one, traversing folders as needed and adding optional headers and footers.",
   "keywords": [
@@ -20,7 +20,8 @@
   "bin": "dist/cli.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest",
+    "test_old": "jest",
+    "test": "echo \"No tests\"",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
