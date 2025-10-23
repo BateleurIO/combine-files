@@ -78,20 +78,20 @@ export class FileCombiner {
       startIndex += maxBucketSize;
     }
     return result;
-    }
-    private readFileWithEncodingDetection(filePath: string, fallbackEncoding = 'utf-8'): string {
-        const chardet = require('chardet');
-        const iconv = require('iconv-lite');
-        const buffer = fs.readFileSync(filePath);
+  }
+  private readFileWithEncodingDetection(filePath: string, fallbackEncoding = 'utf-8'): string {
+    const chardet = require('chardet');
+    const iconv = require('iconv-lite');
+    const buffer = fs.readFileSync(filePath);
 
-        // Detect encoding
-        const detectedEncoding = chardet.detect(buffer) || fallbackEncoding;
+    // Detect encoding
+    const detectedEncoding = chardet.detect(buffer) || fallbackEncoding;
 
-        // Decode using detected encoding
-        const content = iconv.decode(buffer, detectedEncoding);
+    // Decode using detected encoding
+    const content = iconv.decode(buffer, detectedEncoding);
 
-        return content;
-    }
+    return content;
+  }
 
   private removeBom(x: any) {
     // Catches EFBBBF (UTF-8 BOM) because the buffer-to-string
