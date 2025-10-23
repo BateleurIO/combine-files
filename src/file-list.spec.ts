@@ -9,7 +9,7 @@ test('Add files', () => {
   }).list;
   const foundItem = fileLists.find(item => {
     const relPath = path.relative(basePath, item);
-    return relPath === 'SAMPLE.CONFIG.JSON';
+    return relPath === 'sample.config.json';
   });
   expect(foundItem).toBeDefined();
 });
@@ -21,7 +21,7 @@ test('Add files with constrained glob', () => {
   }).list;
   const foundItem = fileLists.find(item => {
     const relPath = path.relative(basePath, item);
-    return relPath === 'SAMPLE.CONFIG.JSON';
+    return relPath === 'sample.config.json';
   });
   expect(foundItem).toBeDefined();
 });
@@ -33,7 +33,7 @@ test('Add files with constrained glob', () => {
   }).list;
   const foundItem = fileLists.find(item => {
     const relPath = path.relative(basePath, item);
-    return !relPath || relPath === 'SAMPLE.CONFIG.JSON';
+    return !relPath || relPath === 'sample.config.json';
   });
   expect(foundItem).toBeDefined();
 });
@@ -42,5 +42,5 @@ test('Add files from multiple sources', () => {
   const fileLists = new FileList(['test', 'src', 'tsconfig.json'], basePath, {
     fileGlobs: ['**/*.spec.*s'],
   }).list;
-  expect(fileLists.length).toBe(4);
+  expect(fileLists.length).toBe(6);
 });

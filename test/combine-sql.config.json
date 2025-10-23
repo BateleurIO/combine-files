@@ -1,0 +1,6 @@
+{
+    "fileGroups": [{
+        "groupName": "Group2",
+        "fileGlobs": ["**/*.sql"]
+     }]
+}

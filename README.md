@@ -19,11 +19,55 @@ $ npm install combine-files
 
 ## Usage
 
+### Command Line
+
+## Examples
+
+```
+combine-files --mask=*.txt
+```
+* Recursively combines all *.txt files in the current folder and stores the result in output.txt
+
+```
+combine-files --mask=*.sql --input=./scripts --output=./combined-script.sql
+```
+* Recursively combines all *.sql files in the ./scripts folder and stores the result in ./combined-script.sql
+
+```
+combine-files --config=./sample-config.json
+```
+* Recursively combines files according to the configuration found in ./sample-config.json
+
+```
+combine-files
+```
+* Recursively combines files according to the configuration found in ./combinefiles.json
+
+## Config File Format
+
+Configuration files are a simple JSON structure, for example:
+
+```json
+{
+    "fileGroups": [{
+        "groupName": "Change logs",
+        "fileGlobs": ["**/changes.md"],
+        "tocEntry": "  TOC Entry goes here" 
+     }, {
+        "groupName": "Readme files",
+        "fileGlobs": ["**/readme.md"],
+        "tocEntry": "  TOC Entry goes here" 
+     }]
+}
+```
+
+The full definition of a file group is shown in the section: [IConfigFileGroup interface](https://github.com/BateleurIO/combine-files#iconfigfilegroup-interface)
+
 ### Simple One-Liner
 
 **From JavaScript**
 ```js
-var combineFiles = require('@cobuskruger/combine-files');
+var c = require('@cobuskruger/combine-files');
 const result = c.combineFiles(['./test/test1.txt', './test/test2.txt'], config);
 ```
 

@@ -8,6 +8,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
+## [1.0.18] - 2024-02-21
+
+* Fixed a crash on large files.
+
+## [1.0.14] - 2020-06-11
+
+* Support files in different encodings.
+* Fixed a bug causing incorrect line numbers.
+
+## [1.0.13] - 2020-06-11
+
+* Gracefully fail when a file cannot be found.
+
+## [1.0.12] - 2020-05-12
+
+* Incorrect file list processed in command-line version.
+
+## [1.0.11] - 2020-05-11
+
+* Switched build to es2015, which simplifies the generated code and makes it more robust when it comes to Node JS call stack handling.
+* Reduced memory footprint.
+
+## [1.0.10] - 2020-05-11
+
+* Expanded documentation for command-line usage.
+* Improved robustness of command-line usage.
+* Added defaults for SQL, Markdown and text files.
+
+## [1.0.8] - 2020-04-29
+
+* Don't uppercase filenames during search.
+
+## [1.0.7] - 2020-04-29
+
+* Added a simple CLI wrapper.
+* Updated dependencies to fix vulnerabilities.
+
 ## [1.0.6] - 2019-07-06
 
 * Allow adding the time stamp to the file output.
