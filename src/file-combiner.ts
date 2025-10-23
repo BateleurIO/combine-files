@@ -56,7 +56,7 @@ export class FileCombiner {
   }
   private addFile(uri: string): any {
     const currentLength = this.items.length;
-    const data = fs.readFileSync(uri);
+    const data = this.readFileWithEncodingDetection(uri);
     const fileText = this.bufferToString(data);
     this.lineNumbers[uri] = currentLength + 1;
     this.items.push(...TagReplacer.replaceTagsArr(this.fileGroup.entryHeader, uri, this.lineNumbers[uri]));
@@ -78,7 +78,21 @@ export class FileCombiner {
       startIndex += maxBucketSize;
     }
     return result;
-  }
+    }
+    private readFileWithEncodingDetection(filePath: string, fallbackEncoding = 'utf-8'): string {
+        const chardet = require('chardet');
+        const iconv = require('iconv-lite');
+        const buffer = fs.readFileSync(filePath);
+
+        // Detect encoding
+        const detectedEncoding = chardet.detect(buffer) || fallbackEncoding;
+
+        // Decode using detected encoding
+        const content = iconv.decode(buffer, detectedEncoding);
+
+        return content;
+    }
+
   private removeBom(x: any) {
     // Catches EFBBBF (UTF-8 BOM) because the buffer-to-string
     // conversion translates it to FEFF (UTF-16 BOM)
